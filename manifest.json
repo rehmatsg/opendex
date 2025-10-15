@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "OpenDex",
+  "version": "0.1.0",
+  "description": "Let an LLM control the current browser tab (navigation, clicks, typing, scrolling).",
+  "action": { "default_popup": "dist/src/popup/index.html" },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "dist/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["dist/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "externally_connectable": {
+    "matches": ["*://*/*"]
+  },
+  "web_accessible_resources": [
+    { "resources": ["*.wasm", "*.json"], "matches": ["<all_urls>"] }
+  ]
+}

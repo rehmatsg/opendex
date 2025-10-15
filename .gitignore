@@ -1,0 +1,33 @@
+# Compiled JavaScript and Source Maps
+*.js
+*.js.map
+*.d.ts # Optionally ignore declaration files if generated and not meant for distribution
+
+# Node.js dependencies
+node_modules/
+
+# Build artifacts
+dist/
+build/
+out/
+
+# Log files
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE-specific files (e.g., VS Code)
+.vscode/
+.idea/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Other temporary files
+tmp/
+temp/
